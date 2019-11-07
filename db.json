@@ -1,6 +1,22 @@
 {
   "tasks": [
-    { "id": 0, "create_date": "json-server", "expiration_date": "typicode", "status": "0", "text": "bañar al perrito" },
-    { "id": 1, "create_date": "ayer", "expiration_date": "typicode", "status": "1", "text": "comprar comida" }
+    {
+      "id": 0,
+      "create_date": "json-server",
+      "expiration_date": "typicode",
+      "status": "0",
+      "text": "bañar al perrito"
+    },
+    {
+      "id": 1,
+      "create_date": "ayer",
+      "expiration_date": "typicode",
+      "status": "1",
+      "text": "comprar comida"
+    },
+    {
+      "text": "text",
+      "id": 2
+    }
   ]
 }
