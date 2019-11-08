@@ -1,61 +1,67 @@
 {
   "tasks": [
     {
-      "id": 0,
-      "create_date": "json-server",
-      "expiration_date": "typicode",
-      "status": "0",
-      "text": "bañar al perrito"
-    },
-    {
-      "id": 1,
-      "create_date": "ayer",
-      "expiration_date": "typicode",
-      "status": "1",
-      "text": "comprar comida"
-    },
-    {
-      "text": "text",
-      "id": 2
-    },
-    {
-      "text": "sip",
-      "id": 3
-    },
-    {
-      "text": "sadas",
-      "id": 4
-    },
-    {
-      "text": "tarea",
-      "id": 5
-    },
-    {
-      "text": "asdasdsa",
-      "id": 6
-    },
-    {
-      "text": "aaaaaaaaaa",
-      "id": 7
-    },
-    {
-      "text": "vfa",
-      "expiration_date": "2019-11-08",
-      "id": 8
+      "creation_date": "2019-11-08",
+      "expiration_date": "",
+      "status": 1,
+      "text": "",
+      "id": 1
     },
     {
       "creation_date": "2019-11-08",
-      "expiration_date": "2019-11-15",
+      "expiration_date": "",
       "status": 1,
-      "text": "nueva",
-      "id": 9
+      "text": "s",
+      "id": 2
+    },
+    {
+      "creation_date": "2019-11-08",
+      "expiration_date": "2019-11-02",
+      "status": 1,
+      "text": "sadsa",
+      "id": 3
     },
     {
       "creation_date": "2019-11-08",
       "expiration_date": "",
       "status": 1,
       "text": "",
-      "id": 10
+      "id": 4
+    },
+    {
+      "creation_date": "2019-11-08",
+      "expiration_date": "",
+      "status": 1,
+      "text": "",
+      "id": 5
+    },
+    {
+      "creation_date": "2019-11-08",
+      "expiration_date": "",
+      "status": 1,
+      "text": "",
+      "id": 6
+    },
+    {
+      "creation_date": "2019-11-08",
+      "expiration_date": "",
+      "status": 1,
+      "text": "aa",
+      "id": 7
+    },
+    {
+      "creation_date": "2019-11-08",
+      "expiration_date": "2019-11-08",
+      "status": 1,
+      "text": "llll",
+      "id": 8
+    },
+    {
+      "creation_date": "2019-11-08",
+      "expiration_date": "2019-11-08",
+      "status": 1,
+      "text": "lllllll",
+      "id": 9
     }
   ]
 }
