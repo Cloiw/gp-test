@@ -1,74 +1,11 @@
 {
   "tasks": [
     {
-      "creation_date": "2019-11-08",
-      "expiration_date": "",
-      "status": 3,
-      "text": "",
+      "creation_date": 1573171200000,
+      "expiration_date": 1577232000000,
+      "status": 1,
+      "text": "Prueba de fecha  vencimiento 25dic",
       "id": 1
-    },
-    {
-      "creation_date": "2019-11-08",
-      "expiration_date": "",
-      "status": 0,
-      "text": "s",
-      "id": 2
-    },
-    {
-      "creation_date": "2019-11-08",
-      "expiration_date": "2019-11-02",
-      "status": 1,
-      "text": "sadsa",
-      "id": 3
-    },
-    {
-      "creation_date": "2019-11-08",
-      "expiration_date": "",
-      "status": 1,
-      "text": "",
-      "id": 4
-    },
-    {
-      "creation_date": "2019-11-08",
-      "expiration_date": "",
-      "status": 1,
-      "text": "",
-      "id": 5
-    },
-    {
-      "creation_date": "2019-11-08",
-      "expiration_date": "",
-      "status": 1,
-      "text": "",
-      "id": 6
-    },
-    {
-      "creation_date": "2019-11-08",
-      "expiration_date": "",
-      "status": 1,
-      "text": "aa",
-      "id": 7
-    },
-    {
-      "creation_date": "2019-11-08",
-      "expiration_date": "2019-11-08",
-      "status": 1,
-      "text": "llll",
-      "id": 8
-    },
-    {
-      "creation_date": "2019-11-08",
-      "expiration_date": "2019-11-08",
-      "status": 1,
-      "text": "lllllll",
-      "id": 9
-    },
-    {
-      "creation_date": "2019-11-08",
-      "expiration_date": "2019-11-22",
-      "status": 1,
-      "text": "Bañar al perrito",
-      "id": 10
     }
   ]
 }

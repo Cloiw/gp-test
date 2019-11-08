@@ -26,7 +26,7 @@ const TaskCard = (props) => {
           <Col xs={12} md={4}>
             <div className="align-right">
               <Card.Text>
-                {expirationDate}
+                {new Date(expirationDate).toISOString().split('T')[0]}
               </Card.Text>
             </div>
           </Col>
@@ -37,7 +37,7 @@ const TaskCard = (props) => {
           </Col>
         </Row>
       </Card.Body>
-      <Card.Footer className="text-muted">Fecha de creación {creationDate}</Card.Footer>
+      <Card.Footer className="text-muted">Fecha de creación {new Date(creationDate).toISOString().split('T')[0]}</Card.Footer>
     </Card>
   )
 }
