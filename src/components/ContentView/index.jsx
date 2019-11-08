@@ -4,6 +4,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import store from '../../store';
 import CreateTask from '../CreateTask';
 import TaskCard from '../TaskCard';
+import SortTask from '../SortTask';
 import { getTasks, updateStatusTask, releaseCheckedTasks } from '../../store/actions/tasks_action';
 
 class ContentView extends React.Component {
@@ -24,7 +25,10 @@ class ContentView extends React.Component {
             <Button onClick={() => releaseCheckedTasks(tasksData.checkedTasks)}variant="outline-dark" size="lg">Liberar seleccionadas</Button>
           </Col>
           <Col>
-            <CreateTask/>
+            <CreateTask />
+          </Col>
+          <Col>
+            <SortTask />
           </Col>
         </Row>
         {tasksData.tasks.map(e => {

@@ -2,7 +2,8 @@
 const initialState = { 
   tasks: [],
   toUpdate: 0,
-  checkedTasks: {}
+  checkedTasks: {},
+  releasedTasks: []
  };
  
 export default ( state = initialState, action ) => {
@@ -14,17 +15,20 @@ export default ( state = initialState, action ) => {
       return Object.assign({},state,{
         newTask: action.payload,
         tasks: tasks,
-        toUpdate: state.tasks.length
       });
 
     case 'GET_TASKS':
       return Object.assign({},state,{
         tasks: action.payload,
-        toUpdate: action.payload.length
+        releasedTasks: state.releasedTasks
+      });
+
+    case 'SORT_TASKS':
+      return Object.assign({},state,{
+        tasks: action.payload
       });
 
     case 'UPDATE_STATUS_TASK':
-      console.log("llego")
         return Object.assign({},state,{
           toUpdate: action.payload
         });
@@ -50,8 +54,9 @@ export default ( state = initialState, action ) => {
         })
     
     case 'RELEASE_CHECKED_TASK':
+      console.log("aqui deberia actualizar")
         return Object.assign({},state,{
-          releasedTasks: action.payload
+          releasedTasks: action.payload,
         })
       
 

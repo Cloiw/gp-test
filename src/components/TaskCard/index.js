@@ -19,7 +19,7 @@ const TaskCard = ({ creationDate, expirationDate, text, status, id, checkedTasks
         <Row bsPrefix="align-center row">
           <Col xs={12} md={2} bsPrefix="check-align col">
             <Form.Group controlId={id}>
-              <Form.Check onChange={()=>handleCheck(id)} ref={checkRef} type="checkbox" />
+              { status !== 0 && <Form.Check onChange={()=>handleCheck(id)} ref={checkRef} type="checkbox" /> }
             </Form.Group>
           </Col>
           <Col xs={12} md={4} bsPrefix="text-align-top col">
