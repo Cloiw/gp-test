@@ -17,6 +17,7 @@ class ContentView extends React.Component {
 
   render (){
     const { tasksData, releaseCheckedTasks } = this.props;
+    const date = new Date().toISOString().split('T')[0]
     return (
       <Provider store={store}>
         <Container>
@@ -25,7 +26,7 @@ class ContentView extends React.Component {
             <h1>Cosas por hacer</h1>
           </Col>
           <Col bsPrefix="date-col col" md={4} xs={12}>
-            <h2> {new Date().toISOString().split('T')[0]} </h2>
+            <h2>Hoy : {date.split('-').reverse().join('/')} </h2>
           </Col>
         </Row>
         <Row>
