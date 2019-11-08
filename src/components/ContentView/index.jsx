@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider, connect } from 'react-redux';
 import store from '../../store';
 import CreateTask from '../CreateTask';
-import TaskContainer from '../TaskContainer';
+import TaskCard from '../TaskCard';
 import { getTasks } from '../../store/actions/tasks_action';
 
 class ContentView extends React.Component {
@@ -20,7 +20,7 @@ class ContentView extends React.Component {
           <h1>Cosas por hacer  {new Date().toISOString().split('T')[0]}</h1>
         <CreateTask/>
         {tasksData.tasks.map(e => {
-           return <TaskContainer text={e.text}/>
+           return <TaskCard key={e.id} text={e.text} creationDate={e.creation_date} expirationDate={e.expiration_date} status={e.status}/>
         })}
         </div>
       </Provider>
