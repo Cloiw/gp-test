@@ -1,5 +1,6 @@
 import React from 'react';
 import { Provider, connect } from 'react-redux';
+import { Container, Row, Col } from 'react-bootstrap';
 import store from '../../store';
 import CreateTask from '../CreateTask';
 import TaskCard from '../TaskCard';
@@ -16,13 +17,13 @@ class ContentView extends React.Component {
     getTasks()
     return (
       <Provider store={store}>
-        <div className="App">
+        <Container>
           <h1>Cosas por hacer  {new Date().toISOString().split('T')[0]}</h1>
         <CreateTask/>
         {tasksData.tasks.map(e => {
            return <TaskCard key={e.id} text={e.text} creationDate={e.creation_date} expirationDate={e.expiration_date} status={e.status}/>
         })}
-        </div>
+        </Container>
       </Provider>
     )
   }

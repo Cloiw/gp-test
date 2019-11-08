@@ -3,14 +3,14 @@
     {
       "creation_date": "2019-11-08",
       "expiration_date": "",
-      "status": 1,
+      "status": 3,
       "text": "",
       "id": 1
     },
     {
       "creation_date": "2019-11-08",
       "expiration_date": "",
-      "status": 1,
+      "status": 0,
       "text": "s",
       "id": 2
     },
