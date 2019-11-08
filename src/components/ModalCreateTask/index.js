@@ -47,8 +47,8 @@ const ModalCreateTask = ({ show, onHide, addTask }) => {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={onHide}>Cancelar</Button>
-        <Button onClick={() => {handleSubmit()}}>Guardar</Button>
+        <Button variant="outline-secondary" onClick={onHide}>Cancelar</Button>
+        <Button variant="outline-primary" onClick={() => {handleSubmit()}}>Guardar</Button>
       </Modal.Footer>
     </Modal>
   </div>

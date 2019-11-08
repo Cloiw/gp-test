@@ -8,7 +8,7 @@ const CreateTask = () => {
 
   return (
     <ButtonToolbar>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
+      <Button variant="outline-dark" size="lg" onClick={() => setModalShow(true)}>
         Crear Tarea
       </Button>
       <ModalCreateTask

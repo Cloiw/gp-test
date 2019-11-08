@@ -1,10 +1,18 @@
 ## Ejecución
-Instalar dependencias
- $ npm i 
+1. Instalar dependencias
 
-Iniciar servidor para datos
+```sh
+$ npm install
+```
+ 
+2. Iniciar servidor para datos
+```sh
  $ json-server --watch db.json --port 3004
+ ```
 
-Iniciar Aplicación
+3. Iniciar aplicación
+```sh
  $ npm start
+  ```
+
 
