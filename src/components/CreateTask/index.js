@@ -1,16 +1,23 @@
-import React, {useRef} from 'react';
-import { addTask } from '../../store/actions/tasks_action';
-import { connect } from 'react-redux'
+import React from 'react';
+import ModalCreateTask from "../ModalCreateTask";
+import { ButtonToolbar, Button } from 'react-bootstrap';
 
-const CreateTask = ({ addTask }) => {
-  const textRef = useRef(null);
 
-  return(
-  <div>
-  <input type="text" ref={textRef}  />
-  <button onClick={() => {addTask(textRef.current.value)}}>Guardar</button>
-  </div>
-  )
+const CreateTask = () => {
+  const [modalShow, setModalShow] = React.useState(false);
+
+  return (
+    <ButtonToolbar>
+      <Button variant="primary" onClick={() => setModalShow(true)}>
+        Crear Tarea
+      </Button>
+      <ModalCreateTask
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
+    </ButtonToolbar>
+
+  );
 }
 
-export default connect(null, { addTask }) (CreateTask);
+export default CreateTask;

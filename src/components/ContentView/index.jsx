@@ -17,7 +17,7 @@ class ContentView extends React.Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <h1>Cosas por hacer</h1>
+          <h1>Cosas por hacer  {new Date().toISOString().split('T')[0]}</h1>
         <CreateTask/>
         {tasksData.tasks.map(e => {
            return <TaskContainer text={e.text}/>
