@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import {  FiAlertCircle } from 'react-icons/fi';
 import { FaRegCheckCircle, FaRegClock } from 'react-icons/fa';
 import './TaskCard.css';
+import ExpirationDate from '../ExpirationDate';
 
 const TaskCard = ({ creationDate, expirationDate, text, status, id, checkedTasks }) => {
   const checkRef = useRef(null);
@@ -31,9 +32,7 @@ const TaskCard = ({ creationDate, expirationDate, text, status, id, checkedTasks
           </Col>
           <Col xs={12} md={4}>
             <div className="align-right">
-              <Card.Text>
-                {new Date(expirationDate).toISOString().split('T')[0]}
-              </Card.Text>
+              <ExpirationDate id={id} status={status} date={new Date(expirationDate).toISOString().split('T')[0]} />
             </div>
           </Col>
           <Col xs={12} md={2}>

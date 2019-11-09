@@ -15,7 +15,25 @@ export const checkedTasks = (isChecked, id) => {
   }
 }
 
-export const sortTasks = ( sortBy, data ) => {
+export const updateDate = (id, newDate) => {
+  console.log(newDate)
+  const newDateToTimeStamp = new Date(newDate).getTime();
+  const result = fetch(`http://localhost:3004/tasks/${id}`, {
+    method: 'PATCH',
+    headers: {
+    'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      expiration_date: newDateToTimeStamp,
+    })
+  })
+  return {
+    type: 'UPDATE_DATE',
+    payload: result
+  }
+}
+
+export const sortTasks = (sortBy, data) => {
   let orderResult;
   if ( sortBy === 'expired' ) {
     orderResult = data.sort((a, b) => {
@@ -40,11 +58,11 @@ export const sortTasks = ( sortBy, data ) => {
 
 
 export const releaseCheckedTasks = ( checkedTasks ) => {
-  let objectLength = Object.keys(checkedTasks).length;
+  const objectLength = Object.keys(checkedTasks).length;
   for( let i = 0; i < objectLength; i++) {
-    let taskId = Object.keys(checkedTasks)[i];
+    const taskId = Object.keys(checkedTasks)[i];
     if( checkedTasks[taskId] ) {
-        fetch(`http://localhost:3004/tasks/${taskId}`, {
+      fetch(`http://localhost:3004/tasks/${taskId}`, {
         method: 'PATCH',
         headers: {
         'Content-Type': 'application/json'
@@ -55,31 +73,31 @@ export const releaseCheckedTasks = ( checkedTasks ) => {
       })
     }
   }
-
   return {
     type: 'RELEASE_CHECKED_TASK',
     payload: checkedTasks
   }
 }
 
-export const addTask = (text,expiration_date) => {
-  const expirationToTimeStamp = new Date(expiration_date).getTime();
+export const addTask = (text, expirationDate) => {
+  const expirationToTimeStamp = new Date(expirationDate).getTime();
   const creationDate = new Date().toISOString().split('T')[0];
   const creationDateToTimeStamp = new Date(creationDate).getTime();
   const add = fetch('http://localhost:3004/tasks', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        creation_date: creationDateToTimeStamp,
-        expiration_date: expirationToTimeStamp,
-        status: 1,
-        text: text,
-      })
+    },
+    body: JSON.stringify({
+      creation_date: creationDateToTimeStamp,
+      expiration_date: expirationToTimeStamp,
+      status: 1,
+      text: text,
+    })
     }).then(res => {
       return res.json()
-    })
+  })
+
   return {
     type: 'ADD_TASK',
     payload: add

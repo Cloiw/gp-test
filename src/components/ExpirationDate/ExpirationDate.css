@@ -1,0 +1,28 @@
+.input-date {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.input-date > input {
+  width: 60%;
+  font-size: 16px !important;
+  text-align: right !important;
+}
+
+.p-date {
+  margin-right: 20%;
+}
+
+@media only screen and (max-width: 768px) {
+  .input-date {
+    justify-content: center;
+  }
+
+  .input-date > input {
+    width: 60%;
+  }
+  .p-date {
+    margin-right: 0;
+  }
+  
+}

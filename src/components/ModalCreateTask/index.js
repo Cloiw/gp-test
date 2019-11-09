@@ -1,7 +1,7 @@
-import React, {useRef, useState} from 'react';
+import React, { useRef } from 'react';
 import { addTask } from '../../store/actions/tasks_action';
 import { connect } from 'react-redux';
-import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
+import { Modal, Button, Form } from 'react-bootstrap';
 import './ModalCreateTask.css'
 
 const ModalCreateTask = ({ show, onHide, addTask }) => {

@@ -2,21 +2,21 @@
   "tasks": [
     {
       "creation_date": 1673171200000,
-      "expiration_date": 1577232000000,
+      "expiration_date": 1577577600000,
       "status": 0,
       "text": "Prueba de fecha  vencimiento 25dic",
       "id": 1
     },
     {
       "creation_date": 1173181200000,
-      "expiration_date": 1574985600000,
+      "expiration_date": 1572652800000,
       "status": 0,
       "text": "mueva",
       "id": 2
     },
     {
       "creation_date": 1573171200000,
-      "expiration_date": 1574985600000,
+      "expiration_date": 1574467200000,
       "status": 0,
       "text": "dlfsd",
       "id": 3
@@ -24,7 +24,7 @@
     {
       "creation_date": 1573171200000,
       "expiration_date": 1577750400000,
-      "status": 0,
+      "status": 1,
       "text": "vencencence",
       "id": 4
     },

@@ -1,16 +1,16 @@
 const initialState = { 
   tasks: [],
-  toUpdate: 0,
   checkedTasks: {},
-  releasedTasks: []
+  releasedTasks: [],
+  updatedDates: []
  };
  
 export default ( state = initialState, action ) => {
   switch (action.type) {
     case 'ADD_TASK':
-      let tasks = state.tasks
-      const newTask = action.payload
-      tasks.push(newTask)
+      let tasks = [...state.tasks];
+      const newTask = action.payload;
+      tasks.push(newTask);
       return Object.assign({},state,{
         newTask: action.payload,
         tasks: tasks,
@@ -27,10 +27,14 @@ export default ( state = initialState, action ) => {
         tasks: action.payload
       });
 
-    case 'UPDATE_STATUS_TASK':
-        return Object.assign({},state,{
-          toUpdate: action.payload
-        });
+    case 'UPDATE_DATE':
+      let updatedDates = [...state.updatedDates];
+      const newUpdateDate = action.payload;
+      updatedDates.push(newUpdateDate)
+
+      return Object.assign({},state,{
+        updatedDates: updatedDates
+      });
     
     case 'CHECKED_TASKS':
       let checkedTasks = {...state.checkedTasks};
