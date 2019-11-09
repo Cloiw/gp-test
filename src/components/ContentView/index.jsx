@@ -17,7 +17,7 @@ class ContentView extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { sortTasks, tasksData } = this.props;
-    if (prevProps.tasksData.tasks != tasksData.tasks) {
+    if (prevProps.tasksData.tasks !== tasksData.tasks) {
       sortTasks(tasksData.sortBy, tasksData.tasks)
       };
   }

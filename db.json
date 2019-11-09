@@ -1,53 +1,32 @@
 {
   "tasks": [
     {
-      "creation_date": 1673171200000,
-      "expiration_date": 1843603200000,
-      "status": 0,
-      "text": "Prueba de fecha  vencimiento 25dic",
+      "creation_date": 1572271200000,
+      "expiration_date": 1572998400000,
+      "status": 1,
+      "text": "Comprar comida para el perrito",
       "id": 1
     },
     {
-      "creation_date": 1173181200000,
-      "expiration_date": 1573603200000,
+      "creation_date": 1563181200000,
+      "expiration_date": 1564358400000,
       "status": 0,
-      "text": "mueva",
+      "text": "Llamar a papá",
       "id": 2
     },
     {
-      "creation_date": 1573171200000,
-      "expiration_date": 1556928000000,
-      "status": 0,
-      "text": "dlfsd",
+      "creation_date": 1572571200000,
+      "expiration_date": 1574899200000,
+      "status": 1,
+      "text": "Pagar las cuentas de la casa",
       "id": 3
     },
     {
-      "creation_date": 1573171200000,
-      "expiration_date": 1577750400000,
+      "creation_date": 1573257600000,
+      "expiration_date": 1573344000000,
       "status": 0,
-      "text": "vencencence",
+      "text": "Pagar cuentas",
       "id": 4
-    },
-    {
-      "creation_date": 1573257600000,
-      "expiration_date": 1546300800000,
-      "status": 0,
-      "text": "YA VENCIO",
-      "id": 5
-    },
-    {
-      "creation_date": 1573257600000,
-      "expiration_date": 1549929600000,
-      "status": 0,
-      "text": "sadsa",
-      "id": 6
-    },
-    {
-      "creation_date": 1573257600000,
-      "expiration_date": 1573862400000,
-      "status": 1,
-      "text": "blabla",
-      "id": 7
     }
   ]
 }
