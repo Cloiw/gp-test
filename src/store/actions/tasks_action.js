@@ -17,7 +17,7 @@ export const checkedTasks = (isChecked, id) => {
 
 export const updateDate = (id, newDate) => {
   const newDateToTimeStamp = new Date(newDate).getTime();
-  const result = fetch(`http://localhost:3004/tasks/${id}`, {
+  fetch(`http://localhost:3004/tasks/${id}`, {
     method: 'PATCH',
     headers: {
     'Content-Type': 'application/json'
@@ -28,7 +28,7 @@ export const updateDate = (id, newDate) => {
   })
   return {
     type: 'UPDATE_DATE',
-    payload: newDate,
+    payload: newDateToTimeStamp,
     id: id
   }
 }
@@ -37,8 +37,8 @@ export const sortTasks = (sortBy, data) => {
   let orderResult;
   if ( sortBy === 'expired' ) {
     orderResult = data.sort((a, b) => {
-    return  a.expiration_date - b.expiration_date
-    }); 
+      return  a.expiration_date - b.expiration_date
+    });
   } else if ( sortBy === 'status' ) {
     orderResult = data.sort((a, b) => {
       return b.status - a.status
@@ -51,11 +51,10 @@ export const sortTasks = (sortBy, data) => {
 
   return {
     type: 'SORT_TASKS',
-    payload: orderResult
+    payload: orderResult,
+    sortBy: sortBy
   }
 }
-
-
 
 export const releaseCheckedTasks = ( checkedTasks ) => {
   const objectLength = Object.keys(checkedTasks).length;

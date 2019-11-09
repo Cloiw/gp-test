@@ -8,13 +8,13 @@ import './SortTask.css'
 const SortTask = ({ sortTasks, tasksData }) => {
   const sortOption = useRef(null);
   const handleChange= () => {
-    console.log(sortOption.current.value);
+    console.log("handle change" , tasksData.tasks)
     sortTasks(sortOption.current.value, tasksData.tasks)
   }
 
   return (
     <Form.Group>
-      <Form.Control bsPrefix={"btn-light form-control"} ref={sortOption} onChange={handleChange}defaultValue={"created"} as="select">
+      <Form.Control bsPrefix={"btn-light form-control"} ref={sortOption} onChange={handleChange} defaultValue={"created"} as="select">
         <option value="created" disabled>Ordenar</option>
         <option value="created">Fecha de creación</option>
         <option value="expired">Fecha de vencimiento</option>

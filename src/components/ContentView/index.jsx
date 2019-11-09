@@ -5,13 +5,22 @@ import store from '../../store';
 import CreateTask from '../CreateTask';
 import TaskCard from '../TaskCard';
 import SortTask from '../SortTask';
-import { getTasks, releaseCheckedTasks } from '../../store/actions/tasks_action';
+import { getTasks, releaseCheckedTasks, sortTasks } from '../../store/actions/tasks_action';
 import './ContentView.css'
 
 class ContentView extends React.Component {
-  async componentDidMount(){
-    const { getTasks } = this.props;
+  async componentDidMount() {
+    const { getTasks, sortTasks, tasksData } = this.props;
     getTasks()
+    sortTasks(tasksData.sortBy, tasksData.tasks)
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { sortTasks, tasksData } = this.props;
+    if (prevProps.tasksData.tasks != tasksData.tasks) {
+      console.log("debugianding", prevProps.tasksData.tasks)
+      sortTasks(tasksData.sortBy, tasksData.tasks)
+      };
   }
 
   render (){
@@ -56,4 +65,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {getTasks, releaseCheckedTasks}) (ContentView);
+export default connect(mapStateToProps, {getTasks, releaseCheckedTasks, sortTasks}) (ContentView);

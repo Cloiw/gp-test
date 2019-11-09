@@ -7,7 +7,6 @@ import './ExpirationDate.css'
 const ExpirationDate = ({date, status, updateDate, id}) => {
   const dateRef = useRef(null);
   const [currentDate, setDate] = React.useState(date);
-
   const newDate = () => {
     setDate(dateRef.current.value);
     updateDate(id, dateRef.current.value);
