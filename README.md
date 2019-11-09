@@ -5,7 +5,7 @@
 $ npm install
 ```
  
-2. Iniciar servidor para datos
+2. Iniciar servidor
 ```sh
  $ npm run server
  ```

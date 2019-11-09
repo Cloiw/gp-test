@@ -30,19 +30,19 @@ export const sortTasks = ( sortBy, data ) => {
       return b.creation_date - a.creation_date
     })
   }
+
   return {
     type: 'SORT_TASKS',
     payload: orderResult
   }
 }
 
+
+
 export const releaseCheckedTasks = ( checkedTasks ) => {
   let objectLength = Object.keys(checkedTasks).length;
-  console.log(checkedTasks, objectLength)
-  let updatedTasks = [];
-  for( let i = 1; i <= objectLength; i++) {
-    let index = i - 1;
-    let taskId = Object.keys(checkedTasks)[index];
+  for( let i = 0; i < objectLength; i++) {
+    let taskId = Object.keys(checkedTasks)[i];
     if( checkedTasks[taskId] ) {
         fetch(`http://localhost:3004/tasks/${taskId}`, {
         method: 'PATCH',
@@ -52,27 +52,13 @@ export const releaseCheckedTasks = ( checkedTasks ) => {
         body: JSON.stringify({
           status: 0,
         })
-      }).then(res => {
-          res.json().then(res=>{
-            updatedTasks.push(res)
-          })
       })
     }
   }
 
   return {
     type: 'RELEASE_CHECKED_TASK',
-    payload: updatedTasks
-  }
-}
-
-
-export const updateStatusTask = (tasks,number) => {
-  // const currentDate = new Date().toISOString().split('T')[0];
-  // const ccurrentDateToTimeStamp = new Date(currentDate).getTime();
-  return {
-    type: 'UPDATE_STATUS_TASK',
-    payload: tasks.length
+    payload: checkedTasks
   }
 }
 

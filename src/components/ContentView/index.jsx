@@ -5,14 +5,13 @@ import store from '../../store';
 import CreateTask from '../CreateTask';
 import TaskCard from '../TaskCard';
 import SortTask from '../SortTask';
-import { getTasks, updateStatusTask, releaseCheckedTasks } from '../../store/actions/tasks_action';
+import { getTasks, releaseCheckedTasks } from '../../store/actions/tasks_action';
 import './ContentView.css'
 
 class ContentView extends React.Component {
   async componentDidMount(){
-    const { getTasks, updateStatusTask, tasksData } = this.props;
+    const { getTasks } = this.props;
     getTasks()
-    updateStatusTask(tasksData.tasks, tasksData.toUpdate)
   }
 
   render (){
@@ -57,4 +56,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {getTasks, updateStatusTask, releaseCheckedTasks}) (ContentView);
+export default connect(mapStateToProps, {getTasks, releaseCheckedTasks}) (ContentView);
