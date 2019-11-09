@@ -13,6 +13,20 @@
   margin-right: 20%;
 }
 
+.calendar-icon {
+  margin: 10px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.calendar-icon > p {
+  margin: 0
+}
+.calendar-icon  > svg {
+  align-self: center;
+  margin-left: 10px;
+}
+
 @media only screen and (max-width: 768px) {
   .input-date {
     justify-content: center;
@@ -21,8 +35,13 @@
   .input-date > input {
     width: 60%;
   }
+
   .p-date {
     margin-right: 0;
+  }
+
+  .calendar-icon {
+    justify-content: center;
   }
   
 }

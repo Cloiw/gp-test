@@ -21,11 +21,6 @@
   text-align: left;
 }
 
-.align-right {
-  text-align: right;
-  align-items: center;
-}
-
 .align-center {
   align-items: center;
 
@@ -47,7 +42,7 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .align-left, .align-right {
+  .align-lef {
     text-align: center;
     margin: 20px 0;
   }

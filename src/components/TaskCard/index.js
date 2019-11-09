@@ -43,9 +43,7 @@ const TaskCard = ({ creationDate, expirationDate, text, status, id, checkedTasks
             </div>
           </Col>
           <Col xs={12} md={4}>
-            <div className="align-right">
-              <ExpirationDate id={id} status={status} date={new Date(expirationDate).toISOString().split('T')[0]} />
-            </div>
+            <ExpirationDate id={id} status={status} date={new Date(expirationDate).toISOString().split('T')[0]} />
           </Col>
           <Col xs={12} md={2}>
             {status === 1 && todaysDateTimeStamp < expirationDate && <FaRegClock size={48} color="#ffc107" /> }

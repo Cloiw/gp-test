@@ -30,7 +30,7 @@ class ContentView extends React.Component {
         <Container>
         <Row bsPrefix="row-title row">
           <Col md={8} xs={12}>
-            <h1>Cosas por hacer</h1>
+            <h1>Cosas por Hacer</h1>
           </Col>
           <Col bsPrefix="date-col col" md={4} xs={12}>
             <h2>Hoy : {date.split('-').reverse().join('/')} </h2>
