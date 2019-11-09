@@ -16,7 +16,6 @@ export const checkedTasks = (isChecked, id) => {
 }
 
 export const updateDate = (id, newDate) => {
-  console.log(newDate)
   const newDateToTimeStamp = new Date(newDate).getTime();
   const result = fetch(`http://localhost:3004/tasks/${id}`, {
     method: 'PATCH',
@@ -29,7 +28,8 @@ export const updateDate = (id, newDate) => {
   })
   return {
     type: 'UPDATE_DATE',
-    payload: result
+    payload: newDate,
+    id: id
   }
 }
 

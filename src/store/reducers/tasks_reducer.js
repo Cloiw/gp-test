@@ -28,12 +28,15 @@ export default ( state = initialState, action ) => {
       });
 
     case 'UPDATE_DATE':
-      let updatedDates = [...state.updatedDates];
+      let oldTasks = [...state.tasks];
       const newUpdateDate = action.payload;
-      updatedDates.push(newUpdateDate)
-
+      for(let i = 0; i < oldTasks.length ; i++){
+        if( oldTasks[i].id === action.id ){
+          oldTasks[i].expiration_date = newUpdateDate
+        }
+      }
       return Object.assign({},state,{
-        updatedDates: updatedDates
+        tasks: oldTasks
       });
     
     case 'CHECKED_TASKS':
