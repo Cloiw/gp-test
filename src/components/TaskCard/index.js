@@ -52,7 +52,7 @@ const TaskCard = ({ creationDate, expirationDate, text, status, id, checkedTasks
           </Col>
         </Row>
       </Card.Body>
-      <Card.Footer className="text-muted">Fecha de creación {new Date(creationDate).toISOString().split('T')[0]}</Card.Footer>
+      <Card.Footer className="text-muted">Fecha de creación {new Date(creationDate).toISOString().split('T')[0].split('-').reverse().join('-')} </Card.Footer>
     </Card>
   )
 }
