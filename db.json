@@ -2,7 +2,7 @@
   "tasks": [
     {
       "creation_date": 1673171200000,
-      "expiration_date": 518400000,
+      "expiration_date": 1845244800000,
       "status": 1,
       "text": "Prueba de fecha  vencimiento 25dic",
       "id": 1
@@ -24,7 +24,7 @@
     {
       "creation_date": 1573171200000,
       "expiration_date": 1577750400000,
-      "status": 1,
+      "status": 0,
       "text": "vencencence",
       "id": 4
     },
@@ -37,7 +37,7 @@
     },
     {
       "creation_date": 1573257600000,
-      "expiration_date": 1686700800000,
+      "expiration_date": 1592352000000,
       "status": 1,
       "text": "sadsa",
       "id": 6

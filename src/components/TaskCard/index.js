@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Card, Button, Form, Row, Col } from 'react-bootstrap';
+import { Card, Form, Row, Col } from 'react-bootstrap';
 import { checkedTasks } from '../../store/actions/tasks_action';
 import { connect } from 'react-redux';
 import {  FiAlertCircle } from 'react-icons/fi';
@@ -9,13 +9,25 @@ import ExpirationDate from '../ExpirationDate';
 
 const TaskCard = ({ creationDate, expirationDate, text, status, id, checkedTasks }) => {
   const checkRef = useRef(null);
+  const todaysDate = new Date().toISOString().split('T')[0];
+  const todaysDateTimeStamp = new Date(todaysDate).getTime();
 
   const handleCheck = (id) => {
     checkedTasks(checkRef.current.checked, id);
   }
 
+  const borderStatus = () => {
+    if( status === 0 ) {
+      return "success"
+    }
+    if ( status === 1 && todaysDateTimeStamp < expirationDate ) {
+      return "warning"
+    }
+    return "danger"
+  }
+
   return (
-    <Card border={status === 1 ? "warning" : status === 0 ? "success" : "danger"} className="text-center">
+    <Card border={borderStatus()} className="text-center">
       <Card.Body>
         <Row bsPrefix="align-center row">
           <Col xs={12} md={2} bsPrefix="check-align col">
@@ -36,9 +48,9 @@ const TaskCard = ({ creationDate, expirationDate, text, status, id, checkedTasks
             </div>
           </Col>
           <Col xs={12} md={2}>
-            {status === 1 ? <FaRegClock size={48} color="#ffc107" /> : 
-             status === 0 ? <FaRegCheckCircle size={48} color={"#28a745"} /> : 
-             <FiAlertCircle size={48} color={"#dc3545"} />}
+            {status === 1 && todaysDateTimeStamp < expirationDate && <FaRegClock size={48} color="#ffc107" /> }
+            {status === 1 && todaysDateTimeStamp > expirationDate && <FiAlertCircle size={48} color={"#dc3545"} /> }
+            {status === 0 && <FaRegCheckCircle size={48} color={"#28a745"} /> }
           </Col>
         </Row>
       </Card.Body>

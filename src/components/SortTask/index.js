@@ -8,7 +8,6 @@ import './SortTask.css'
 const SortTask = ({ sortTasks, tasksData }) => {
   const sortOption = useRef(null);
   const handleChange= () => {
-    console.log("handle change" , tasksData.tasks)
     sortTasks(sortOption.current.value, tasksData.tasks)
   }
 

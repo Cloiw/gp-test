@@ -30,7 +30,6 @@ export default ( state = initialState, action ) => {
       });
 
     case 'UPDATE_DATE':
-      console.log("cambiando fecha")
       let oldTasks = [...state.tasks];
       const newUpdateDate = action.payload;
       for(let i = 0; i < oldTasks.length ; i++){
