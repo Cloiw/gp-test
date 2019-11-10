@@ -36,10 +36,10 @@ class ContentView extends React.Component {
             <h2>Hoy : {date.split('-').reverse().join('/')} </h2>
           </Col>
         </Row>
-        <Row>
+        <Row bsPrefix="row-btns row">
           <Col md={4} xs={12}>
             <div className={"btn-toolbar-top"}>
-              <Button onClick={() => releaseCheckedTasks(tasksData.checkedTasks)}variant="light" size="lg">Liberar seleccionadas</Button>
+              <Button onClick={() => releaseCheckedTasks(tasksData.checkedTasks)}variant="light" size="lg">Liberar Seleccionadas</Button>
             </div>
           </Col>
           <Col md={4} xs={12}>

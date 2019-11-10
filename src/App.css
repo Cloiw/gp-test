@@ -3,3 +3,7 @@
 * {
   font-family: 'Open Sans', sans-serif;
 }
+
+.btn-light {
+  border: 1px solid rgba(0, 0, 0, 0.288) !important;
+}

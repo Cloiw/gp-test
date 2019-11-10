@@ -5,7 +5,10 @@
 .date-col {
   text-align: right;
 }
-
+ .row-btns {
+   padding-bottom: 10px;
+   border-bottom: 2px solid rgba(0, 0, 0, 0.11);
+ }
 @media only screen and (max-width: 768px) {
   .btn-toolbar-top > button {
     width: 100%;
