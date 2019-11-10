@@ -15,6 +15,7 @@ $ npm install
  $ npm start
   ```
 
+
 #### Compatibility
 This application uses `<input type=date>`, the use of the following browsers is recommended :
 
