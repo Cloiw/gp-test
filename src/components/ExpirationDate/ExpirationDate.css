@@ -28,15 +28,7 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .input-date {
-    justify-content: center;
-  }
-
   .input-date > input {
     width: 60%;
-  }
-
-  .p-date {
-    margin-right: 0;
   }
 }

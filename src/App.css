@@ -7,3 +7,7 @@
 .btn-light {
   border: 1px solid rgba(0, 0, 0, 0.288) !important;
 }
+
+input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-clear-button {
+  display: none;                         
+}

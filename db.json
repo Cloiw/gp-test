@@ -2,7 +2,7 @@
   "tasks": [
     {
       "creation_date": 1572271200000,
-      "expiration_date": 1572998400000,
+      "expiration_date": 1573776000000,
       "status": 1,
       "text": "Comprar comida para el perrito",
       "id": 1
@@ -16,7 +16,7 @@
     },
     {
       "creation_date": 1572571200000,
-      "expiration_date": 1574899200000,
+      "expiration_date": 1572566400000,
       "status": 1,
       "text": "Pagar las cuentas de la casa",
       "id": 3

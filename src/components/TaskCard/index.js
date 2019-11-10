@@ -47,7 +47,7 @@ const TaskCard = ({ creationDate, expirationDate, text, status, id, checkedTasks
           </Col>
           <Col xs={12} md={2}>
             {status === 1 && todaysDateTimeStamp < expirationDate && <FaRegClock size={48} color="#ffc107" /> }
-            {status === 1 && todaysDateTimeStamp > expirationDate && <FiAlertCircle size={48} color={"#dc3545"} /> }
+            {status === 1 && todaysDateTimeStamp >= expirationDate && <FiAlertCircle size={48} color={"#dc3545"} /> }
             {status === 0 && <FaRegCheckCircle size={48} color={"#28a745"} /> }
           </Col>
         </Row>
