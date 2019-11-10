@@ -5,25 +5,29 @@ import store from '../../store';
 import CreateTask from '../CreateTask';
 import TaskCard from '../TaskCard';
 import SortTask from '../SortTask';
-import { getTasks, releaseCheckedTasks, sortTasks } from '../../store/actions/tasks_action';
+import FilterTask from '../FilterTask';
+import { getTasks, releaseCheckedTasks, sortTasks, filterAndSort } from '../../store/actions/tasks_action';
 import './ContentView.css'
 
 class ContentView extends React.Component {
   async componentDidMount() {
-    const { getTasks, sortTasks, tasksData } = this.props;
+    const { getTasks } = this.props;
     getTasks()
-    sortTasks(tasksData.sortBy, tasksData.tasks)
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { sortTasks, tasksData } = this.props;
-    if (prevProps.tasksData.tasks !== tasksData.tasks) {
-      sortTasks(tasksData.sortBy, tasksData.tasks)
+    const { tasksData, filterAndSort } = this.props;
+
+    if (prevProps.tasksData.tasks !== tasksData.tasks || 
+      prevProps.tasksData.filterBy !== tasksData.filterBy || 
+      prevProps.tasksData.sortBy !== tasksData.sortBy) {
+        filterAndSort(tasksData.sortBy, tasksData.filterBy, tasksData.tasks)
       };
   }
 
   render (){
     const { tasksData, releaseCheckedTasks } = this.props;
+    console.log(tasksData.resultTasks, "lo que llega al render")
     const date = new Date().toISOString().split('T')[0]
     return (
       <Provider store={store}>
@@ -37,19 +41,22 @@ class ContentView extends React.Component {
           </Col>
         </Row>
         <Row bsPrefix="row-btns row">
-          <Col md={4} xs={12}>
+          <Col md={3} xs={12}>
             <div className={"btn-toolbar-top"}>
               <Button onClick={() => releaseCheckedTasks(tasksData.checkedTasks)}variant="light" size="lg">Liberar Seleccionadas</Button>
             </div>
           </Col>
-          <Col md={4} xs={12}>
+          <Col md={3} xs={12}>
             <CreateTask />
           </Col>
-          <Col md={4} xs={12}>
+          <Col md={3} xs={12}>
+            <FilterTask />
+          </Col>
+          <Col md={3} xs={12}>
             <SortTask />
           </Col>
         </Row>
-        {tasksData.tasks.map(e => {
+        {tasksData.resultTasks.map(e => {
            return <TaskCard key={e.id} id={e.id} text={e.text} creationDate={e.creation_date} expirationDate={e.expiration_date} status={e.status}/>
         })}
         </Container>
@@ -64,4 +71,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {getTasks, releaseCheckedTasks, sortTasks}) (ContentView);
+export default connect(mapStateToProps, {getTasks, releaseCheckedTasks, sortTasks, filterAndSort}) (ContentView);

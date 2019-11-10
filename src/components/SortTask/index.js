@@ -5,10 +5,10 @@ import { Form } from 'react-bootstrap';
 import './SortTask.css'
 
 
-const SortTask = ({ sortTasks, tasksData }) => {
+const SortTask = ({ sortTasks }) => {
   const sortOption = useRef(null);
   const handleChange= () => {
-    sortTasks(sortOption.current.value, tasksData.tasks)
+    sortTasks(sortOption.current.value)
   }
 
   return (
@@ -23,10 +23,4 @@ const SortTask = ({ sortTasks, tasksData }) => {
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    tasksData : state.tasks_reducer
-  }
-}
-
-export default connect(mapStateToProps, { sortTasks }) (SortTask);
+export default connect(null, { sortTasks }) (SortTask);
