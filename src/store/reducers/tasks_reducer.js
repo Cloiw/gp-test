@@ -1,9 +1,10 @@
 const initialState = { 
   tasks: [],
   checkedTasks: {},
-  releasedTasks: [],
   updatedDates: [],
-  sortBy: "created"
+  sortBy: "created",
+  filterBy: "none",
+  resultTasks: [],
  };
  
 export default ( state = initialState, action ) => {
@@ -18,16 +19,20 @@ export default ( state = initialState, action ) => {
       });
 
     case 'GET_TASKS':
+      console.log("se hace un get")
       return Object.assign({},state,{
         tasks: action.payload,
-        releasedTasks: state.releasedTasks
       });
 
     case 'SORT_TASKS':
       return Object.assign({},state,{
-        tasks: action.payload,
-        sortBy: action.sortBy
+        sortBy: action.payload
       });
+      case 'FILTER_TASKS':
+      return Object.assign({},state,{
+        filterBy: action.payload
+      });
+
 
     case 'UPDATE_DATE':
       let oldTasks = [...state.tasks];
@@ -80,6 +85,12 @@ export default ( state = initialState, action ) => {
         tasks: currentTasks,
       })
       
+    case 'RESULT_TASKS':
+      console.log("entro en el type")
+      return Object.assign({},state,{
+        resultTasks: action.payload,
+      })
+
     default : return state
   }
   

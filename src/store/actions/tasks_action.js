@@ -4,7 +4,7 @@ export const getTasks = () => {
   })
   return {
     type: 'GET_TASKS',
-    payload: result
+    payload: result,
   }
 }
 
@@ -33,30 +33,61 @@ export const updateDate = (id, newDate) => {
   }
 }
 
-export const sortTasks = (sortBy, data) => {
-    let orderResult;
+export const filterAndSort = (sortBy, filterBy, data) => { 
+  const todaysDate = new Date().toISOString().split('T')[0]
+  const todaysDateTimeStamp = new Date(todaysDate).getTime();
+  let resultFilter = data.filter( element => { 
+    if (filterBy === 'none'){
+      return element;
+    } else if (filterBy === 'released') {
+      return element.status === 0
+    } else if (filterBy === 'pending') {
+      return element.status === 1
+    } else if (filterBy === 'expired') {
+      if(element.expiration_date < todaysDateTimeStamp && element.status === 1){
+        return true
+      }
+    }
+    return false
+  })
+
+  let result;
+  
   if ( sortBy === 'expired' ) {
-    orderResult = data.sort((a, b) => {
+    result = resultFilter.sort((a, b) => {
       return  a.expiration_date - b.expiration_date
     });
   } else if ( sortBy === 'status' ) {
-    let expiredResult = data.sort((a, b) => {
+    let expiredResult = resultFilter.sort((a, b) => {
       return  a.expiration_date - b.expiration_date
     })
-    orderResult = expiredResult.sort((a, b) => {
+    result = expiredResult.sort((a, b) => {
       return b.status - a.status
     })
   } else if ( sortBy === 'created' ) {
-    orderResult = data.sort((a, b) => {
+    result = resultFilter.sort((a, b) => {
       return b.creation_date - a.creation_date
     })
   }
-  
+
+  return {
+    type: 'RESULT_TASKS',
+    payload: result
+  }
+}
+
+export const sortTasks = (sortBy) => {
   return {
     type: 'SORT_TASKS',
-    payload: orderResult,
-    sortBy: sortBy
-  }
+    payload: sortBy
+   }
+}
+
+export const filterTasks = (filterBy) => {
+  return {
+    type: 'FILTER_TASKS',
+    payload: filterBy
+   }
 }
 
 export const releaseCheckedTasks = ( checkedTasks ) => {
